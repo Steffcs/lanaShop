@@ -70,7 +70,7 @@ class ShoppingFragment : Fragment(),(Product, Int) -> Unit {
 
 
     private fun initObservers(){
-        productsViewModel.total.observe(this, Observer {
+        productsViewModel.total.observe(viewLifecycleOwner, Observer {
             fragmentShoppingBinding.shoppingViewLayout.txtTotal.text = it.toString()
         })
 

@@ -70,7 +70,7 @@ class OrdersFragment : Fragment() {
 
 
     private fun initObservers(){
-        ordersViewModel.ordersData.observe(this, Observer {
+        ordersViewModel.ordersData.observe(viewLifecycleOwner, Observer {
             mAdapter?.mList = it.reversed()
             mAdapter?.notifyDataSetChanged()
 
