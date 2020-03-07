@@ -60,7 +60,7 @@ class AddProductUseCaseTest  : KoinTest {
         whenever(productsRepository.getLocalProducts()).thenReturn(Single.just(list))
         useCase.addProducts(product, 1)
 
-        assert(useCase.buildUseCaseSingle().blockingGet()[0].count == 1L)
+        assert(useCase.buildUseCaseSingle().blockingGet()[0].count == 1)
 
 
 
