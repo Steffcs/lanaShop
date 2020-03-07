@@ -74,7 +74,7 @@ class ShoppingFragment : Fragment(),(Product, Int) -> Unit {
             fragmentShoppingBinding.shoppingViewLayout.txtTotal.text = it.toString()
         })
 
-        productsViewModel.productsData.observe(this, Observer {
+        productsViewModel.productsData.observe(viewLifecycleOwner, Observer {
 
             fragmentShoppingBinding.emptyViewLayout.emptyViewContainer.visibility= View.GONE
             fragmentShoppingBinding.shoppingViewLayout.shoppingCartContainer.visibility= View.VISIBLE
@@ -84,11 +84,11 @@ class ShoppingFragment : Fragment(),(Product, Int) -> Unit {
             productsViewModel.getDiscount()
         })
 
-        productsViewModel.messageData.observe(this, Observer {
+        productsViewModel.messageData.observe(viewLifecycleOwner, Observer {
             setFailLayout(it)
         })
 
-        productsViewModel.showProgressbar.observe(this, Observer { isVisible ->
+        productsViewModel.showProgressbar.observe(viewLifecycleOwner, Observer { isVisible ->
             setEmptyState(isVisible)
 
         })
