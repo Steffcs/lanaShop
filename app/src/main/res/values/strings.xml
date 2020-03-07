@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">lanaShop</string>
+
+    <string name="count_hint">Total %s</string>
+    <string name="add_one_item">adding product</string>
+    <string name="remove_one_item">remove product</string>
+    <string name="checkout">Checkout</string>
+    <string name="error_label">Error Conexion</string>
+
+    <string name="order_text_label">Order : 2342535</string>
+    <string name="order_total_label">Total Producs</string>
+    <string name="order_amount_label">total amount : 2132</string>
+    <string name="order_discount_label">total discount :23123</string>
+
+    <string name="shopping_label">SHOPPING CART</string>
+    <string name="total_label">$ 0</string>
+    <string name="total_text_label">Total Price</string>
+
+
 </resources>

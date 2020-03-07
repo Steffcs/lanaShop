@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <data>
+
+            <import type="android.view.View"/>
+
+        </data>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/shopping_cart_container"
+    tools:context=".presentation.ui.MainActivity">
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/horizontal_gradient"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txttittle"
+        layout_constraintHeight_percent=".35"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtTotal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical|top"
+        android:paddingTop="@dimen/default_text_padding"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/shopping_label" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtTotal"
+        layout_constraintHeight_percent=".35"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical|bottom"
+        android:text="@string/total_label"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.289" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtTotallabel"
+        layout_constraintHeight_percent=".35"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtTotal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical|top"
+        android:paddingTop="@dimen/default_text_padding"
+        android:textAlignment="center"
+        android:textColor="@color/colorDiscounts"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTotal"
+        app:layout_constraintVertical_bias="0.085"
+        android:text="@string/total_text_label" />
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".50" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/products_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_marginStart="@dimen/orders_margin"
+                android:layout_marginLeft="@dimen/orders_margin"
+                android:layout_marginEnd="@dimen/orders_margin"
+                android:layout_marginRight="@dimen/orders_margin"
+                app:layout_constraintBottom_toTopOf="@+id/materialButton"
+                app:layout_constraintDimensionRatio="w,1.1"
+                app:layout_constraintEnd_toStartOf="@+id/view"
+                app:layout_constraintHorizontal_bias="0.485"
+                app:layout_constraintStart_toEndOf="@+id/materialButton"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                app:layout_constraintVertical_bias="1.0"
+                tools:listitem="@layout/product_item" />
+
+            <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/materialButton"
+
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/producto_margin"
+        android:layout_marginLeft="@dimen/producto_margin"
+        android:layout_marginEnd="@dimen/producto_margin"
+        android:layout_marginRight="@dimen/producto_margin"
+        android:layout_marginBottom="@dimen/orders_margin"
+        android:background="@drawable/horizontal_gradient"
+        android:text="@string/checkout"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
