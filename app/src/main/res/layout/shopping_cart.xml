@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="SHOPPING CART" />
+        android:text="@string/shopping_label" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtTotal"
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:gravity="center_vertical|bottom"
-        android:text="$ 0"
+        android:text="@string/total_label"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFF"
@@ -88,7 +88,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTotal"
         app:layout_constraintVertical_bias="0.085"
-        android:text="Total Price" />
+        android:text="@string/total_text_label" />
 
 
 

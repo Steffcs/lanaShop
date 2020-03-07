@@ -4,12 +4,8 @@
 
     <color name="colorDiscounts">#ffffff</color>
     <color name="colorAccent">#F77062</color>
-    <color name="colorError">#FE5196</color>
-
 
     <color name="primaryColor">#F77062</color>
-    <color name="primaryLightColor">#FE5196</color>
     <color name="primaryDarkColor">#F77062</color>
-    <color name="primaryTextColor">#ffffff</color>
     <color name="greyColor">#9E9999</color>
 </resources>

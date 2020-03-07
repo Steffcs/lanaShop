@@ -41,7 +41,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/cell_text_height"
                 android:layout_below="@id/txtProductlabel"
-                android:layout_alignParentBottom="true"
                 android:gravity="center_vertical|top"
                 android:paddingTop="@dimen/default_text_padding"
                 android:textSize="15sp"

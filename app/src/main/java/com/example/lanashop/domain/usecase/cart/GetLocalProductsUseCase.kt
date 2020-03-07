@@ -1,5 +1,6 @@
 package com.example.lanashop.domain.usecase.cart
 
+import android.annotation.SuppressLint
 import com.android.artgallery.domain.usecase.base.SingleUseCase
 import com.example.lanashop.domain.model.Product
 import com.example.lanashop.domain.repository.ProductsRepository
@@ -15,6 +16,7 @@ private val productsRepository: ProductsRepository
         mproducts = products!!
     }
 
+    @SuppressLint("CheckResult")
     override fun buildUseCaseSingle(): Single<List<Product>> {
         mproducts.forEach {
             val id = productsRepository.getProductById(it.code)
