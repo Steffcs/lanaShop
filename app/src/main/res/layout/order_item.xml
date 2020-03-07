@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable name="order" type="com.example.lanashop.domain.model.OrdersResponse"/>
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/cardView_height"
+        app:cardElevation="@dimen/cardView_height"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/orders_margin"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTotalOrderId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:text='@{String.format("Order : #  %1d", order.orderId)}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/primaryDarkColor"
+                android:textStyle="bold"
+                tools:text="@string/order_text_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtProduts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/orders_text_size"
+                android:textStyle="bold"
+                android:text='@{String.format("Products : %1d", order.count)}'
+                android:textColor="@color/greyColor"
+                tools:text="@string/order_total_label" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|top"
+                android:paddingTop="@dimen/default_text_padding"
+                android:textSize="@dimen/orders_text_size"
+                android:textStyle="bold"
+                android:text='@{String.format("Total discount : $ %.1f", order.total)}'
+                android:textColor="@color/greyColor"
+                tools:text="@string/order_amount_label" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTotalDiscount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical|top"
+                android:paddingTop="@dimen/default_text_padding"
+                android:textSize="@dimen/orders_text_size"
+                android:textStyle="bold"
+                android:text='@{String.format("Total amount :  $ %.1f", order.totalWithDiscount)}'
+                android:textColor="@color/greyColor"
+                tools:text="@string/order_discount_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical|top"
+                android:paddingTop="@dimen/default_text_padding"
+                android:textSize="@dimen/orders_text_size"
+                android:textStyle="bold"
+                android:text='@{String.format("Date :  %1s", order.orderDate)}'
+                android:textColor="@color/greyColor"
+                tools:text="Order : 2020/12/12" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>
