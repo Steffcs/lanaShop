@@ -19,7 +19,7 @@ buildscript {
         materialVersion = '1.1.0'
         roomVersion = "2.2.4"
         navVersion = "2.2.1"
-        mockitoVersion = "2.2.1"
+        mockitoVersion = "2.2.0"
         gsonVersion = "2.6.2"
     }
 
