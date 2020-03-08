@@ -8,6 +8,7 @@ import com.example.lanashop.data.local.dao.OrdersDao
 import com.example.lanashop.data.local.dao.ProductDao
 import com.example.lanashop.data.remote.RemoteServicesApi
 import com.example.lanashop.data.repository.ProductsRepositoryImp
+import com.example.lanashop.domain.model.OrdersResponse
 import com.example.lanashop.domain.repository.ProductsRepository
 import com.example.lanashop.domain.usecase.cart.*
 import com.example.lanashop.domain.usecase.checkout.GetOrdersUseCase
@@ -23,6 +24,9 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+/**
+ * dependency injection ,  it provides access
+ * */
 
 val AppModule = module {
 
@@ -76,7 +80,6 @@ val AppModule = module {
 
     single { createDeleteProductsUse(get()) }
 
-
 }
 
 fun createOkHttpClient(): OkHttpClient {
@@ -94,7 +97,6 @@ fun createRetrofit(okHttpClient: OkHttpClient, url: String,gsonConverterFactory:
         .addCallAdapterFactory(rxJava2CallAdapterFactory)
         .client(okHttpClient)
         .addConverterFactory(gsonConverterFactory).build()
-
 
 }
 

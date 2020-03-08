@@ -1,6 +1,7 @@
 package com.example.lanashop.presentation.ui.cart
 
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.MutableLiveData
 import com.example.lanashop.domain.model.OrdersResponse
 import com.example.lanashop.domain.model.Product
@@ -23,6 +24,7 @@ class ProductsViewModel constructor(
     private val TAG = ProductsViewModel::class.java.name
     val productsData = MutableLiveData<List<Product>>()
     val showProgressbar = MutableLiveData<Boolean>()
+    val showError = MutableLiveData<Boolean>()
     val deleteCart = MutableLiveData<Boolean>()
     val messageData = MutableLiveData<String>()
     val total = MutableLiveData<Double>()
@@ -31,7 +33,7 @@ class ProductsViewModel constructor(
     fun getCheckout(){
         count=total.value!!
         if(total.value!!>0.0){
-            showProgressbar.value=true
+
             var date = Date()
             val formatter = SimpleDateFormat("MMM dd yyyy HH:mma")
             val answer: String = formatter.format(date)
@@ -43,14 +45,16 @@ class ProductsViewModel constructor(
                 deleteCart()
 
             },onError = {
-                showProgressbar.value=false
+
             })
         }
     }
 
 
     fun deleteCart(){
-        deleteProductsUse.execute(onError = {},onSuccess = {
+        deleteProductsUse.execute(onError = {
+
+        },onSuccess = {
             deleteCart.value=true
             getProducts()
         })
@@ -58,11 +62,11 @@ class ProductsViewModel constructor(
 
 
     fun getProducts() {
+        showProgressbar.value= true
         deleteCart.value=false
-        showProgressbar.value = true
-
         getProductsUseCase.execute(
             onSuccess = {
+                showProgressbar.value=  false
                 refreshCart(it.products)
         },
             onError = {
@@ -76,13 +80,17 @@ class ProductsViewModel constructor(
         getLocalProductsUseCase.checkProducts(products)
         getLocalProductsUseCase.execute(
             onError = {
+
                 it.printStackTrace()
                 messageData.value = "ups something went wrong "
 
+
             },
             onSuccess = {
+
                 Log.i(TAG,"result: $it")
                 productsData.value= it
+
                 })
     }
 
@@ -109,8 +117,8 @@ class ProductsViewModel constructor(
         })
     }
 
-
-
-
+    fun clearStatus(){
+        messageData.value=null
+    }
 
 }

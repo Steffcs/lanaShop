@@ -9,7 +9,7 @@ import com.example.lanashop.domain.model.Product
 import io.reactivex.Single
 
 /**
- * it provides access to [Product] underlying database
+ * it provides access to [OrdersResponse] underlying database
  * */
 @Dao
 interface OrdersDao {

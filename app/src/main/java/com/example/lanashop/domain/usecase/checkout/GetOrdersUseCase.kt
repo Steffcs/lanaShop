@@ -9,9 +9,7 @@ class GetOrdersUseCase constructor(
     private val productsRepository: ProductsRepository
 ) :  SingleUseCase<List<OrdersResponse>>() {
 
-
     override fun buildUseCaseSingle(): Single<List<OrdersResponse>> {
         return productsRepository.getOrders()
     }
-
 }
