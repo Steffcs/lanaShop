@@ -68,7 +68,7 @@ class ProductsViewModel constructor(
             onSuccess = {
                 showProgressbar.value=  false
                 refreshCart(it.products)
-        },
+            },
             onError = {
                 it.printStackTrace()
                 messageData.value = "check your internet connection"
@@ -91,21 +91,21 @@ class ProductsViewModel constructor(
                 Log.i(TAG,"result: $it")
                 productsData.value= it
 
-                })
+            })
     }
 
 
     fun updateProduct(product: Product,action: Int){
 
-            addProductsUseCase.addProducts(product, action)
-            addProductsUseCase.execute(
-                onSuccess = {
-                    productsData.value = it
-                    getDiscount()
-                }
-                , onError = {
-                    messageData.value = "ups something went wrong "
-                })
+        addProductsUseCase.addProducts(product, action)
+        addProductsUseCase.execute(
+            onSuccess = {
+                productsData.value = it
+                getDiscount()
+            }
+            , onError = {
+                messageData.value = "ups something went wrong "
+            })
 
     }
 

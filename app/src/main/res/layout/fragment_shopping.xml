@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="@{model.showProgressbar.booleanValue()==true ? View.GONE : View.VISIBLE}"
-        layout="@layout/shopping_cart"/>
+            layout="@layout/shopping_cart"/>
 
         <include android:id="@+id/empty_view_layout"
             android:layout_width="match_parent"

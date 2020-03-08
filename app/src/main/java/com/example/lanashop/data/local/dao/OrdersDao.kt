@@ -5,7 +5,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.lanashop.domain.model.OrdersResponse
-import com.example.lanashop.domain.model.Product
 import io.reactivex.Single
 
 /**
