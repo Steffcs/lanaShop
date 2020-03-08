@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable name="product" type="com.example.lanashop.domain.model.Product"/>
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:cardCornerRadius="0dp"
+        android:backgroundTint="@color/colorDiscounts"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtProductlabel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cell_text_height"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical|bottom"
+                android:text="@{product.name}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/primaryDarkColor"
+                android:textStyle="bold"
+                tools:text="Cabify T-Shirt" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtpricelabel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cell_text_height"
+                android:layout_below="@id/txtProductlabel"
+                android:gravity="center_vertical|top"
+                android:paddingTop="@dimen/default_text_padding"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text='@{String.format("$ %.1f", product.price)}'
+                android:textColor="@color/greyColor"
+                tools:text="Product Code SHIRT" />
+
+            <ImageView
+                android:id="@+id/ivAddItem"
+                android:layout_width="@dimen/count_button_size"
+                android:layout_height="@dimen/count_button_size"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/add_one_item"
+                app:srcCompat="@drawable/ic_plus" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbCount"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="56dp"
+                android:layout_height="42dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/default_text_margin"
+                android:layout_marginEnd="@dimen/default_text_margin"
+                android:layout_toStartOf="@id/ivAddItem"
+                android:layout_toLeftOf="@id/ivAddItem"
+                android:clickable="false"
+                android:gravity="center"
+                android:hint="@string/count_hint"
+                android:textColor="@color/primaryDarkColor"
+                tools:text="999" />
+
+            <ImageView
+                android:id="@+id/ivRemoveItem"
+                android:layout_width="@dimen/count_button_size"
+                android:layout_height="@dimen/count_button_size"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/mbCount"
+                android:layout_toLeftOf="@id/mbCount"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/remove_one_item"
+                app:srcCompat="@drawable/ic_minus" />
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>

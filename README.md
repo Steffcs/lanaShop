@@ -1,3 +1,4 @@
+
 ## Architecture
 
  Benefits of a Clean Architecture :
@@ -9,7 +10,6 @@
     Could play well with best practices like DDD
     Screaming — Use Cases are clearly visible in the project’s structure
 
-
     * Unit Tests
     * Clean Arch
     * MVVM structure
@@ -17,7 +17,6 @@
     * ViewModels
     * LiveData
     * DATA BINDING
-    
    
 ## Clean architecture 
 
