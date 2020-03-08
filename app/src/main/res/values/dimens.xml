@@ -10,4 +10,5 @@
     <dimen name="orders_text_size">15sp</dimen>
     <dimen name="orders_margin">8dp</dimen>
     <dimen name="producto_margin">24dp</dimen>
+    <dimen name="empty_image">120dp</dimen>
 </resources>

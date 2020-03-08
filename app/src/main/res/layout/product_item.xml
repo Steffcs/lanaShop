@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:cardCornerRadius="0dp"
+        android:backgroundTint="@color/colorDiscounts"
         app:cardUseCompatPadding="true">
 
         <RelativeLayout

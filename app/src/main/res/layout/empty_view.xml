@@ -25,38 +25,87 @@
             android:layout_centerVertical="true"
             android:minWidth="@dimen/bar_height"
             android:minHeight="@dimen/bar_height"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/ivEmptyView"
-            android:layout_width="@dimen/bar_height"
-            android:layout_height="@dimen/bar_height"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/remove_one_item"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_product" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtMessage"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/cell_text_height"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="@dimen/message_height"
-            android:gravity="center_vertical|bottom"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/primaryDarkColor"
-            android:textStyle="bold"
-            android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@+id/loadingBar"
-            tools:text="@string/error_label" />
+            android:layout_height="match_parent"
+            android:id="@+id/empty_refresh_containerr"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/ivEmptyView"
+                android:layout_width="@dimen/empty_image"
+                android:layout_height="@dimen/empty_image"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/remove_one_item"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.386"
+                app:srcCompat="@drawable/ic_product" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_message_tittle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cell_text_height"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical|bottom"
+                android:text="@string/error_title_label"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/primaryDarkColor"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/ivEmptyView"
+                tools:layout_editor_absoluteX="24dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtMessage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cell_text_height"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical|bottom"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/primaryDarkColor"
+                android:textStyle="normal"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/txt_message_tittle"
+                tools:layout_editor_absoluteX="-24dp"
+                tools:text="@string/error_label" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/refresh_button"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginBottom="@dimen/orders_margin"
+                android:background="@drawable/horizontal_gradient"
+                android:text="@string/refresh"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMessage"
+                app:layout_constraintVertical_bias="0.237" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -56,7 +56,7 @@
                 android:paddingTop="@dimen/default_text_padding"
                 android:textSize="@dimen/orders_text_size"
                 android:textStyle="bold"
-                android:text='@{String.format("Total discount : $ %.1f", order.total)}'
+                android:text='@{String.format("Total discount : $ %.1f", order.totalWithDiscount)}'
                 android:textColor="@color/greyColor"
                 tools:text="@string/order_amount_label" />
 
@@ -69,7 +69,7 @@
                 android:paddingTop="@dimen/default_text_padding"
                 android:textSize="@dimen/orders_text_size"
                 android:textStyle="bold"
-                android:text='@{String.format("Total amount :  $ %.1f", order.totalWithDiscount)}'
+                android:text='@{String.format("Total amount :  $ %.1f", order.total)}'
                 android:textColor="@color/greyColor"
                 tools:text="@string/order_discount_label" />
 

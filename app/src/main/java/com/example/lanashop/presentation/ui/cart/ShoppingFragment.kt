@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -45,11 +46,9 @@ class ShoppingFragment : Fragment(),(Product, Int) -> Unit {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         init()
         initObservers()
     }
-
 
     private  fun init() {
 
@@ -62,12 +61,20 @@ class ShoppingFragment : Fragment(),(Product, Int) -> Unit {
         fragmentShoppingBinding.shoppingViewLayout.materialButton.setOnClickListener{
             productsViewModel.getCheckout()
 
-            if(productsViewModel.count>0.0)
-                 findNavController().navigate(R.id.action_shoppingFragment_to_ordersFragment)
+            if(productsViewModel.count>0.0){
+                findNavController().navigate(R.id.action_shoppingFragment_to_ordersFragment)
+            }else{
+                Toast.makeText(activity,R.string.empty_cart,Toast.LENGTH_SHORT).show()
+            }
+
+        }
+
+        fragmentShoppingBinding.emptyViewLayout.refreshButton.setOnClickListener{
+            fragmentShoppingBinding.emptyViewLayout.loadingBar.visibility = View.VISIBLE
+            productsViewModel.getProducts()
         }
 
     }
-
 
     private fun initObservers(){
         productsViewModel.total.observe(viewLifecycleOwner, Observer {
@@ -98,14 +105,11 @@ class ShoppingFragment : Fragment(),(Product, Int) -> Unit {
     private fun  setEmptyState(state: Boolean){
         if(state){
             fragmentShoppingBinding.shoppingViewLayout.shoppingCartContainer.visibility= View.GONE
-            fragmentShoppingBinding.emptyViewLayout.emptyViewContainer.visibility= View.VISIBLE
-            fragmentShoppingBinding.emptyViewLayout.loadingBar.visibility = View.VISIBLE
-            fragmentShoppingBinding.emptyViewLayout.txtMessage.visibility= View.GONE
+            fragmentShoppingBinding.emptyViewLayout.emptyRefreshContainerr.visibility=View.VISIBLE
+
         }else{
             fragmentShoppingBinding.shoppingViewLayout.shoppingCartContainer.visibility= View.VISIBLE
-            fragmentShoppingBinding.emptyViewLayout.emptyViewContainer.visibility= View.GONE
-            fragmentShoppingBinding.emptyViewLayout.loadingBar.visibility = View.GONE
-            fragmentShoppingBinding.emptyViewLayout.txtMessage.visibility= View.GONE
+            fragmentShoppingBinding.emptyViewLayout.emptyRefreshContainerr.visibility=View.GONE
         }
 
     }
@@ -114,8 +118,7 @@ class ShoppingFragment : Fragment(),(Product, Int) -> Unit {
         fragmentShoppingBinding.shoppingViewLayout.shoppingCartContainer.visibility= View.GONE
         fragmentShoppingBinding.emptyViewLayout.emptyViewContainer.visibility= View.VISIBLE
         fragmentShoppingBinding.emptyViewLayout.loadingBar.visibility = View.GONE
-        fragmentShoppingBinding.emptyViewLayout.ivEmptyView.visibility= View.VISIBLE
-        fragmentShoppingBinding.emptyViewLayout.txtMessage.visibility= View.VISIBLE
+        fragmentShoppingBinding.emptyViewLayout.emptyRefreshContainerr.visibility=View.VISIBLE
         fragmentShoppingBinding.emptyViewLayout.txtMessage.text=msj
 
     }
@@ -124,6 +127,5 @@ class ShoppingFragment : Fragment(),(Product, Int) -> Unit {
         productsViewModel.updateProduct(product,action)
 
     }
-
 
 }

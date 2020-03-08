@@ -119,23 +119,22 @@
                 tools:listitem="@layout/product_item" />
 
             <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/materialButton"
-
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/producto_margin"
-        android:layout_marginLeft="@dimen/producto_margin"
-        android:layout_marginEnd="@dimen/producto_margin"
-        android:layout_marginRight="@dimen/producto_margin"
-        android:layout_marginBottom="@dimen/orders_margin"
-        android:background="@drawable/horizontal_gradient"
-        android:text="@string/checkout"
-        android:textColor="#FFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+                android:id="@+id/materialButton"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/producto_margin"
+                android:layout_marginLeft="@dimen/producto_margin"
+                android:layout_marginEnd="@dimen/producto_margin"
+                android:layout_marginRight="@dimen/producto_margin"
+                android:layout_marginBottom="@dimen/orders_margin"
+                android:background="@drawable/horizontal_gradient"
+                android:text="@string/checkout"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
