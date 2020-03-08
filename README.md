@@ -9,13 +9,13 @@
     High Maintainability
     Could play well with best practices like DDD
     Screaming — Use Cases are clearly visible in the project’s structure
-
    
 ## Clean architecture 
 
 ![1*S-F40uCJHy7ZL2hUU3VG7w](https://user-images.githubusercontent.com/31247175/76155057-7ec6c100-60c5-11ea-8251-9c38578ba923.png)
 
 ## APP Feature
+
     * Unit Tests
     * Clean Arch
     * MVVM structure
@@ -24,6 +24,9 @@
     * LiveData
     * DATA BINDING
     *CI
+
+   
+## Clean architecture 
 
 
 ## Screenshots

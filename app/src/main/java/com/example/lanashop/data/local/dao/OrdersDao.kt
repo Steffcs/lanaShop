@@ -5,11 +5,10 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.lanashop.domain.model.OrdersResponse
-import com.example.lanashop.domain.model.Product
 import io.reactivex.Single
 
 /**
- * it provides access to [Product] underlying database
+ * it provides access to [OrdersResponse] underlying database
  * */
 @Dao
 interface OrdersDao {

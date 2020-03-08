@@ -25,7 +25,6 @@
             android:layout_centerVertical="true"
             android:minWidth="@dimen/bar_height"
             android:minHeight="@dimen/bar_height"
-            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,8 +34,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/empty_refresh_containerr"
-            android:visibility="visible"
+            android:id="@+id/empty_refresh_container"
+            android:visibility="gone"
             app:layout_constraintTop_toTopOf="parent">
 
 

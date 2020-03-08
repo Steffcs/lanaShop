@@ -14,5 +14,4 @@ class GetProductsUseCase constructor(
     override fun buildUseCaseSingle(): Single<ProductsResponse> {
         return productsRepository.getProducts()
     }
-
 }
